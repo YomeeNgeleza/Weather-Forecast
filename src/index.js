@@ -14,6 +14,13 @@ function refreshWeather(response) {
 
   let date = new Date(response.data.time * 1000);
   timeElement.innerHTML = formatDate(date);
+
+  let iconElement = document.querySelector("#icon");
+
+  iconElement.innerHTML = `<img
+      src="${response.data.condition.icon_url}"
+      class="weather-app-icon"
+    />`;
 }
 
 function searchCity(city) {
